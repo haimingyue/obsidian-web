@@ -1,4 +1,5 @@
 cd /root/obsidian-web
+git pull
 npx quartz build
 rm -rf /var/www/obsidian-web/*
 cp -r public/* /var/www/obsidian-web/
