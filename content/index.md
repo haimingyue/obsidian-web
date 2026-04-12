@@ -1,5 +1,5 @@
 ---
-title: Welcome to Quartz111
+title: 首页
 ---
 欢迎来到逃离平庸。
 
