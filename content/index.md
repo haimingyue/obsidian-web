@@ -5,11 +5,16 @@ title: 首页
 
 在这里是一个终身成长的网站。
 
-## 英语
 
-这是书籍提取单词的网站：[https://caniread.tlpy8.com/](https://caniread.tlpy8.com/)
 
-我的 Bilibili：[https://space.bilibili.com/608088910?spm_id_from=333.1007.0.0](https://space.bilibili.com/608088910?spm_id_from=333.1007.0.0)
+## 视频进度
+
+[[01 Week-1 辅音]]  点击获取第一周的资源(发布日期：2026 年 04 月 19 日 周日晚 22:00)
+[[00 开篇词]] 
+
+
+
+
 
 ## 英语自学指北
 
