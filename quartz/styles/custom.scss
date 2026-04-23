@@ -1,3 +1,150 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+article.home-page {
+  --home-ink: #1f342f;
+  --home-muted: #61736d;
+  --home-paper: color-mix(in srgb, var(--light) 84%, white);
+  --home-line: color-mix(in srgb, var(--tertiary) 32%, transparent);
+  --home-glow: color-mix(in srgb, var(--tertiary) 18%, transparent);
+
+  position: relative;
+  color: var(--home-ink);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2.5rem -1.5rem auto auto;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 35% 35%, var(--home-glow), transparent 62%),
+      radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--secondary) 12%, transparent), transparent 58%);
+    filter: blur(3px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .home-hero {
+    margin: 0 0 2.4rem;
+    padding: clamp(1.4rem, 4vw, 2.4rem);
+    border: 1px solid var(--home-line);
+    border-radius: 28px;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--tertiary) 20%, transparent), transparent 42%),
+      linear-gradient(160deg, var(--home-paper), color-mix(in srgb, var(--light) 90%, var(--tertiary)));
+    box-shadow: 0 24px 60px color-mix(in srgb, var(--dark) 10%, transparent);
+    overflow: hidden;
+  }
+
+  .home-kicker {
+    margin: 0 0 0.75rem;
+    color: var(--secondary);
+    font-family: var(--headerFont);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .home-hero h1 {
+    margin: 0;
+    color: var(--dark);
+    font-size: clamp(2.45rem, 8vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+  }
+
+  .home-hero p:last-child {
+    max-width: 38rem;
+    margin: 1.1rem 0 0;
+    color: var(--home-muted);
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  > h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 2.3rem;
+    color: var(--dark);
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  > h2::before {
+    content: "";
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    background: var(--tertiary);
+    box-shadow: 0 0 0 0.35rem color-mix(in srgb, var(--tertiary) 16%, transparent);
+  }
+
+  > .callout {
+    margin: 1rem 0;
+    padding: 1.05rem 1.15rem;
+    border: 1px solid var(--home-line);
+    border-left: 5px solid var(--secondary);
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--light) 88%, white);
+    box-shadow: 0 14px 34px color-mix(in srgb, var(--dark) 7%, transparent);
+  }
+
+  > .callout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 44px color-mix(in srgb, var(--dark) 10%, transparent);
+  }
+
+  > .callout .callout-title {
+    font-family: var(--headerFont);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  > .callout .callout-content p {
+    color: var(--home-muted);
+  }
+
+  > .callout .callout-content p:first-child a {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0.15rem 0 0.35rem;
+    padding: 0.42rem 0.78rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--secondary) 12%, var(--light));
+    color: var(--secondary);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  > .callout .callout-content p:first-child a:hover {
+    background: var(--secondary);
+    color: var(--light);
+  }
+
+  > .callout img {
+    display: block;
+    width: min(13rem, 72vw);
+    margin: 1rem auto 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid var(--home-line);
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 16px 36px color-mix(in srgb, var(--dark) 12%, transparent);
+  }
+
+  @media all and (max-width: 600px) {
+    .home-hero {
+      border-radius: 22px;
+    }
+
+    > .callout {
+      border-radius: 18px;
+    }
+  }
+}
