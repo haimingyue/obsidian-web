@@ -1,6 +1,10 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
+const siteBaseUrl = process.env.QUARTZ_BASE_URL?.trim() || "quartz.jzhao.xyz"
+const goatcounterSiteId = process.env.GOATCOUNTER_SITE_ID?.trim()
+const goatcounterHost = process.env.GOATCOUNTER_HOST?.trim()
+
 /**
  * Quartz 4 Configuration
  *
@@ -12,11 +16,15 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: goatcounterSiteId
+      ? {
+          provider: "goatcounter",
+          websiteId: goatcounterSiteId,
+          ...(goatcounterHost ? { host: goatcounterHost } : {}),
+        }
+      : null,
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: siteBaseUrl,
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
